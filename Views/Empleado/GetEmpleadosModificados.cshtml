@@ -1,0 +1,9 @@
+﻿@model List<Empleado>
+
+<h1>Empleados modificados:</h1>
+
+
+@foreach (Empleado empleado in Model)
+{
+    <h1>@empleado.Apellido - @empleado.Oficio - @empleado.Salario</h1>
+}

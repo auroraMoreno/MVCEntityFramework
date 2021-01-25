@@ -1,0 +1,25 @@
+﻿@model List<Plantilla>
+
+<h1>Plantilla: </h1>
+<a asp-action="GetResumenPlantilla" asp-controller="Plantilla">Buscar</a>
+<table>
+    <thead>
+        <tr>
+            <th>Emp no:</th>
+            <th>Apellido:</th>
+            <th>Funcion:</th>
+            <th>Salario:</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Plantilla p in Model)
+        {
+            <tr>
+                <td>@p.EmpleadoNo</td>
+                <td>@p.Apellido</td>
+                <td>@p.Funcion</td>
+                <td>@p.Salario</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+﻿@model Enfermo
+
+<form method="post">
+    <input type="hidden" name="inscripcion" value="@Model.Inscripcion"/>
+    <br />
+    <label>Apellido</label>
+    <input type="text" name="apellido" value="@Model.Apellido"/>
+    <br />
+    <label>Direccion</label>
+    <input type="text" name="direccion" value="@Model.Direccion"/>
+    <br />
+    <label>Fecha de nacimiento</label>
+    <input type="text" name="fechanacimiento" value="@Model.FechaNacimiento.ToShortDateString()"/>
+    <br />
+    <label>Sexo</label>
+    <input type="text" name="sexo" value="@Model.Sexo"/>
+    <br />
+    <label>Seguridad</label>
+    <input type="text" name="seguridad" value="@Model.Seguridad"/>
+    <br />
+    <button type="submit">Insertar</button>
+</form> 

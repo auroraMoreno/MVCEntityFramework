@@ -1,0 +1,41 @@
+﻿@model List<Enfermo>
+
+<h1>Enfermos linq to sql</h1>
+<a asp-controller="Enfermos" asp-action="EnfermosGenero">Enfermos genero</a>
+<a asp-controller="Enfermos" asp-action="InsertarEnfermo">Insertar enfermo</a>
+<table>
+    <thead>
+        <tr>
+        <th>APELLIDO</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(Enfermo enf in Model)
+        {
+            <tr>
+                <td>@enf.Apellido</td>
+                <td>
+                    @Html.ActionLink("detalles","Details","Enfermos",
+                   new { idinscripcion = enf.Inscripcion})
+                </td>
+                <td><a asp-action="Details" asp-controller="Enfermos" 
+                       asp-route-id="@enf.Inscripcion">Details a</a></td>
+                <td>
+                    <a asp-action="EliminarEnfermo" asp-controller="Enfermos"
+                       asp-route-inscripcion="@enf.Inscripcion">delete</a>
+                </td>
+                <td>
+                    <a
+                       asp-controller="Enfermos"
+                       asp-action="UpdateEnfermo"
+                       asp-route-inscripcion="@enf.Inscripcion"
+                       >Edit
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

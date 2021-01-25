@@ -1,0 +1,29 @@
+﻿@model List<Doctor>
+
+
+@{ 
+    List<Doctor> especialidades = ViewBag.Especialidades as List<Doctor>;
+}
+
+<form method="post">
+    <select name="especialidad">
+        @foreach (Doctor d in especialidades)
+        {
+            <option value="@d.Especialidad">@d.Especialidad</option>
+        }
+    </select>
+</form>
+
+@if(Model != null)
+{
+    <table>
+        @foreach (Doctor d in Model)
+        {
+            <tr>
+                <td>@d.Apellido</td>
+                <td>@d.Salario</td>
+                <td>@d.Especialidad</td>
+            </tr>
+        }
+    </table>
+}

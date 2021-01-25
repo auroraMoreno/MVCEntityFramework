@@ -1,0 +1,37 @@
+﻿@model ResumenPlantilla
+
+<form method="post">
+    <label>num dept:</label>
+    <input type="text" name="salario" calss="form-control" />
+    <br />
+    <button type="submit" class="btn-success">Buscar</button>
+</form>
+
+@if (Model != null)
+{
+    <p>personas: @Model.Personas</p>
+    <p>max: @Model.MaximoSalario</p>
+    <p>min: @Model.MinimoSalario</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Emp no:</th>
+                <th>Apellido:</th>
+                <th>Funcion:</th>
+                <th>Salario:</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Plantilla p in Model.Plantillas)
+            {
+                <tr>
+                    <td>@p.EmpleadoNo</td>
+                    <td>@p.Apellido</td>
+                    <td>@p.Funcion</td>
+                    <td>@p.Salario</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

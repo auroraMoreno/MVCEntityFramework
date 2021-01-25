@@ -1,0 +1,26 @@
+﻿@model Empleado
+
+
+@{ 
+    List<String> oficios = ViewBag.Oficios as List<String>;
+}
+<form method="post">
+    <select name="oficio">
+        @foreach (String o in oficios)
+        {
+            <option value="@o">@o</option>
+        }
+    </select>
+    <label>Incremento: </label>
+    <input type="number" name="incremento"/>
+    <br/>
+    <button type="submit">Modifcar</button>
+</form>
+
+@*@if (Model != null)
+{
+    @foreach (Empleado e in Model)
+    {
+        <h1>@e.Apellido</h1>
+    }
+}*@

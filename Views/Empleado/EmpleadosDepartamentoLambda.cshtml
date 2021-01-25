@@ -1,0 +1,35 @@
+﻿@model ResumenDepartamento
+
+<h1>Resumento dept lambda</h1>
+
+<form method="post">
+    <label>num dept:</label>
+    <input type="text" name="departamento" calss="form-control"/>
+    <br/>
+    <button type="submit" class="btn-success">Buscar</button>
+</form>
+
+@if(Model != null)
+{
+    <p>personas: @Model.Personas</p>
+    <p>max: @Model.MaximoSalario</p>
+    <p>min: @Model.MinimoSalario</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Oficio</th>
+                <th>Dept</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Empleado e in Model.Empleados){
+                <tr>
+                    <td>@e.Apellido.</td>
+                    <td>@e.Oficio</td>
+                    <td>@e.Departamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
